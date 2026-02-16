@@ -1,0 +1,184 @@
+/* =========================================
+   1. DETAIL PAGE LAYOUT
+   ========================================= */
+#product-page {
+    background: white;
+    min-height: 100vh;
+    padding-bottom: 100px; /* Space for sticky button */
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.back-btn {
+    border: none;
+    background: transparent;
+    color: #007185;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   2. IMAGE GALLERY (TOP: MAIN | BOTTOM: THUMBS)
+   ========================================= */
+.product-main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Desktop View: Gallery Left, Info Right */
+@media (min-width: 1024px) {
+    .product-main-layout { flex-direction: row; align-items: flex-start; }
+    .gallery-section { width: 50%; position: sticky; top: 10px; }
+    .info-section { width: 50%; padding-left: 30px; }
+}
+
+.gallery-section {
+    display: flex;
+    flex-direction: column; /* FORCES THUMBS BELOW PHOTO */
+    width: 100%;
+}
+
+.main-photo-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.responsive-photo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Thumbnail Row (Bottom) */
+.thumbnail-list {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.thumbnail-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.thumb-wrapper {
+    width: 65px;
+    height: 65px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    background: #f9f9f9;
+}
+
+.thumb-wrapper.active { 
+    border-color: #FFD814; 
+}
+
+.thumb-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* =========================================
+   3. PRODUCT INFO & PRICING
+   ========================================= */
+.brand-line { font-size: 0.9rem; color: #007185; font-weight: 600; }
+.product-title { font-size: 1.4rem; font-weight: 700; margin: 4px 0; }
+.tagline { color: #565959; font-style: italic; font-size: 0.95rem; margin-bottom: 15px; }
+
+.price-box {
+    margin: 15px 0;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.sale-price { font-size: 1.6rem; font-weight: 700; color: #B12704; }
+.mrp-price { font-size: 0.85rem; color: #565959; text-decoration: line-through; margin-left: 10px; }
+
+.moq-tag {
+    background: #f0f2f2;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 10px 0;
+}
+
+/* =========================================
+   4. VARIANT SELECTORS
+   ========================================= */
+.variant-section {
+    background: #fdfdfd;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.selector-group label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.variant-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: white;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+/* =========================================
+   5. BUTTONS & ACTIONS
+   ========================================= */
+.buy-btn {
+    width: 100%;
+    padding: 16px;
+    background: #FFD814;
+    border: 1px solid #FCD200;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.buy-btn:active {
+    background: #f7ca00;
+    transform: scale(0.98);
+}
+
+.description-area { margin-top: 25px; font-size: 0.95rem; color: #333; line-height: 1.6; }
+.description-area h3 { font-size: 1.1rem; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+
+/* Similar Products Divider */
+.section-divider { border: 0; border-top: 1px solid #eee; margin: 40px 0 20px 0; }

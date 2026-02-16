@@ -1,0 +1,70 @@
+/* =========================================
+   FLOATING CART (THE KIT)
+   ========================================= */
+#floating-cart {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: #131921; /* Amazon Dark */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#floating-cart:active {
+    transform: scale(0.9);
+}
+
+#cart-count {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #FFD814;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #131921;
+}
+
+
+
+/* =========================================
+   SHARE BUTTON ON CARD
+   ========================================= */
+.share-btn-card {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 6;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.share-btn-card:active {
+    background: #FFD814; /* Brand Yellow on click */
+}

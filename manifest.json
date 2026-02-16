@@ -1,0 +1,20 @@
+{
+  "name": "Uttam Hub Portal",
+  "short_name": "UttamHub",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/a/AVvXsEjavvD1mIWTFNuH83zz4vQQ0tHbfXbrU7C9qk6Fs-1fokthQ9avOlrC66iwmV1knStOYWGwiHYceXIsLT-7cg5zieozm_Z_2Za5GHNzSw7kN-pNmMakQYq7gYwi5ePwUeQwYjL7M-cn5oM7xNJ5BPtDXxGOzk5D1LzVRgO4gkils1VxCoBB8Ul9kNvGjY-f",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://blogger.googleusercontent.com/img/a/AVvXsEjavvD1mIWTFNuH83zz4vQQ0tHbfXbrU7C9qk6Fs-1fokthQ9avOlrC66iwmV1knStOYWGwiHYceXIsLT-7cg5zieozm_Z_2Za5GHNzSw7kN-pNmMakQYq7gYwi5ePwUeQwYjL7M-cn5oM7xNJ5BPtDXxGOzk5D1LzVRgO4gkils1VxCoBB8Ul9kNvGjY-f",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+/* =========================================
+   1. GLOBAL & RESET STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* =========================================
+   2. BRAND HEADER & NAVIGATION
+   ========================================= */
+.brand-header {
+    background: white;
+    padding: 20px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.back-link {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #007185;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.brand-header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.brand-header p {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* =========================================
+   3. UNIVERSAL 2-COLUMN PRODUCT GRID
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 COLUMNS ON MOBILE */
+    gap: 10px;
+    padding: 10px;
+}
+
+@media (min-width: 768px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(5, 1fr); } }
+
+/* =========================================
+   4. PRODUCT CARD ENHANCEMENTS
+   ========================================= */
+.product-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #f9f9f9;
+}
+
+/* Free Delivery Badge (Top Right) */
+.delivery-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #007185;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 5;
+}
+
+.card-info { padding: 10px; }
+
+.tiny-meta {
+    font-size: 0.65rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    height: 2.4em;
+    overflow: hidden;
+}
+
+.brand-tag {
+    font-size: 0.75rem;
+    color: #565959;
+    margin-bottom: 5px;
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.sale-price { font-weight: 700; color: #B12704; font-size: 1rem; }
+.mrp-price { font-size: 0.75rem; color: #565959; text-decoration: line-through; }
+
+.variant-tag {
+    margin-top: 8px;
+    font-size: 0.65rem;
+    color: #007185;
+    font-weight: 600;
+    background: #f0f8ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* =========================================
+   5. SURFING LOADER
+   ========================================= */
+#loader-wrapper {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #ffffff;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+#loader-wrapper.fade-out { opacity: 0; visibility: hidden; }
+
+.surfing-content { position: relative; width: 100px; height: 100px; }
+.surfboard {
+    width: 60px; height: 15px; background: #FFD814;
+    border-radius: 50% 50% 40% 40%;
+    position: absolute; bottom: 30px; left: 20px;
+    animation: surf 1.5s ease-in-out infinite;
+}
+.wave {
+    width: 80px; height: 10px; background: #007185;
+    position: absolute; bottom: 20px; left: 10px;
+    border-radius: 20px; animation: wave-move 1.5s linear infinite; opacity: 0.3;
+}
+@keyframes surf {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+}
+@keyframes wave-move {
+    0%, 100% { transform: scaleX(0.8); opacity: 0.1; }
+    50% { transform: scaleX(1.2); opacity: 0.4; }
+}
